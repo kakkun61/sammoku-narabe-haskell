@@ -35,7 +35,7 @@ inputLoop bammen = do
     putStr $ "Y 座標: "
     hFlush stdout
     y <- readLn
-    let pos = (x, y)
+    let pos = (y, x)
     if bammen ! pos == ' '
         then return pos
         else do
@@ -59,8 +59,8 @@ doesWin mark bammen =
                                        , [(1, 0), (1, 1), (1, 2)]
                                        , [(2, 0), (2, 1), (2, 2)]
                                        , [(0, 0), (1, 0), (2, 0)]
-                                       , [(1, 0), (1, 1), (1, 2)]
-                                       , [(2, 0), (2, 1), (2, 2)]
+                                       , [(0, 1), (1, 1), (2, 1)]
+                                       , [(0, 2), (1, 2), (2, 2)]
                                        , [(0, 0), (1, 1), (2, 2)]
                                        , [(0, 2), (1, 1), (2, 0)]
                                        ]
